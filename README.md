@@ -17,8 +17,6 @@ Unity brain name: BananaBrain
         Vector Action descriptions: , , , 
 ```
 
-That means we work with state vector containing 37 continous values and 4 discrete actions representing moves (forward, backward, turn left, turn right). The environment is considered solved when agents reaches average score of 13.0 on 100 consecutive episodes.
-
 ## Getting started
 
 Make sure you have `python 3.6` installed and virtual environment of your choosing activated. Unity has to be installed on your system. Run:
