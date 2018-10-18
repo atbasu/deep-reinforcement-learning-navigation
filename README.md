@@ -1,5 +1,3 @@
-[//]: # (Image References)
-
 # DRLN Project 1 : Navigation
 
 <placeholder for agent gif>
@@ -21,19 +19,13 @@ Unity brain name: BananaBrain
 
 ## Getting started
 
-1. Make sure you have `python 3.6` installed and virtual environment of your choosing activated. Unity has to be installed on your system. To install all python dependencies run:
+Make sure you have `python 3.6` installed and virtual environment of your choosing activated. Unity has to be installed on your system. Run:
 
 ```
 source ./install.sh
 ```
-2. Download or clone this repository to a local machine.
-3. Open command line and navigate to the location where this repository was downlaoded
-4. Run `jupyter notebook` which should start jupyter on a browser. Select the Solution.ipynb file, select the approrpiate kernel and then run each code cell. To train a new model run all cells in order. To load a trained model, skip the "Train the agent" section.
 
-Important Files:
-- File `model.py` contains neural network class used as a Q function 
-- File `dqn_agent.py` contains agent code.
-- File `solutions.ipynb` contains the python notebook that can be used to train and watch a trained agent.
+to install python dependencies. Then you should be able to run `jupyter notebook` and view `Solution.ipynb`. File `model.py` contains neural network class used as a Q function and file `dqn_agent.py` contains agent code.
 
 ## Instructions
 

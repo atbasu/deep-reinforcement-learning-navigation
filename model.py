@@ -12,7 +12,7 @@ class QNetwork(nn.Module):
         seed (int): Random seed
     """
 
-    def __init__(self, state_size, action_size, seed, hidden_layers=[128,64], drop_p=0.5)):
+    def __init__(self, state_size, action_size, seed, hidden_layers=[128,64], drop_p=0.5):
         """Initialize parameters and model architecture"""
         super(QNetwork, self).__init__()
         self.seed = torch.manual_seed(seed)
@@ -24,12 +24,12 @@ class QNetwork(nn.Module):
         layer_sizes = zip(hidden_layers[:-1], hidden_layers[1:])
         self.hidden_layers.extend([nn.Linear(h1, h2) for h1, h2 in layer_sizes])
         
-        self.output = nn.Linear(hidden_layers[-1], output_size)
+        self.output = nn.Linear(hidden_layers[-1], action_size)
         
         self.dropout = nn.Dropout(p=drop_p)
         
-
-	def forward(self, state):
+    
+    def forward(self, state):
         """Forward propagation of neural network
         Args:
             state (vector): sized (self.state_size x batch size) with environment state data
@@ -41,6 +41,5 @@ class QNetwork(nn.Module):
         for layer in self.hidden_layers:
             x = F.relu(layer(x))
             x = self.dropout(x)
-        x = self.output(x)
         
-        return F.log_softmax(x, dim=1)
+        return self.output(x)

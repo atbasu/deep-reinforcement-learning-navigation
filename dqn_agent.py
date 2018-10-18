@@ -8,7 +8,7 @@ import torch
 import torch.nn.functional as F
 import torch.optim as optim
 
-from constatns import *
+from constants import *
 
 
 class Agent():
@@ -84,7 +84,7 @@ class Agent():
             gamma (float): discount factor
         """
         states, actions, rewards, next_states, dones = experiences
-
+        
         ## TODO: compute and minimize the loss
         Q_t_next = self.qnetwork_target(next_states).detach().max(1)[0].unsqueeze(1)
         Q_t = rewards + (gamma * Q_t_next * (1 - dones))  
