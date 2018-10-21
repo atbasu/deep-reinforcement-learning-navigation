@@ -72,7 +72,9 @@ Environment solved in 832 episodes!
 
 ### Trained agent
 
-![trained](images/trained1495.gif)
+| ![trained](images/trained1495.gif) |
+|:--:| 
+| POV recording of trained agent navigating the Unity environment over a period of 100 episodes |
 
 
 ## Experimenting with Hyperparameters
