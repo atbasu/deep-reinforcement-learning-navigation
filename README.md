@@ -1,6 +1,6 @@
 # DRLN Project 1 : Navigation
 
-<placeholder for agent gif>
+![trained](images/trained1495.gif)
 
 The goal of this project is to train an agent to navigate a large square virtual world littered with yellow and blue bananas, and collect only yellow bananas. A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana. The goal of the agent is to collect as many yellow bananas as possible while avoiding blue bananas. A succesfully trained agent should score an average of +13 over 100 consecutive episodes.  
 

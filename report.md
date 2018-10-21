@@ -1,59 +1,73 @@
 # Project report
 
+## Introduction
+
+The goal of this project is to train an agent to navigate a large square virtual world littered with yellow and blue bananas, and collect only yellow bananas. A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana. The goal of the agent is to collect as many yellow bananas as possible while avoiding blue bananas. A succesfully trained agent should score an average of +13 over 100 consecutive episodes. 
+
+
+## Environment
+
+
+
+```
+INFO:unityagents:
+'Academy' started successfully!
+Unity Academy name: Academy
+        Number of Brains: 1
+        Number of External Brains : 1
+        Lesson number : 0
+        Reset Parameters :
+		
+Unity brain name: BananaBrain
+        Number of Visual Observations (per agent): 0
+        Vector Observation space type: continuous
+        Vector Observation space size (per agent): 37
+        Number of stacked Vector Observation: 1
+        Vector Action space type: discrete
+        Vector Action space size (per agent): 4
+        Vector Action descriptions: , , , 
+```
+
 ## Learning algorithm
 
 The learning algorithm used is vanilla Deep Q Learning as described in original paper. As an input the vector of state is used instead of an image so convolutional neural nework is replaced with deep neural network. The deep neural network has following layers:
 
 - Fully connected layer - input: 37 (state size) output: 128
 - Fully connected layer - input: 128 output 64
-- Fully connected layer - input: 64 output: (action size)
+- Fully connected layer - input: 64 output: 4 (action size)
 
 Parameters used in DQN algorithm:
 
 - Maximum steps per episode: 1000
 - Starting epsilion: 1.0
 - Ending epsilion: 0.01
-- Epsilion decay rate: 0.999
+- Epsilion decay rate: 0.995
 
-## Results
+## Agent Training
 
-![results](images/plot.png)
+![results](images/average_scores_plot_10000_0.995.png)
 
 ```
-Episode 100	Average Score: 0.16
-Episode 200	Average Score: 0.56
-Episode 300	Average Score: 1.67
-Episode 400	Average Score: 2.33
-Episode 500	Average Score: 3.13
-Episode 600	Average Score: 4.27
-Episode 700	Average Score: 5.53
-Episode 800	Average Score: 6.19
-Episode 900	Average Score: 6.95
-Episode 1000	Average Score: 7.73
-Episode 1100	Average Score: 7.24
-Episode 1200	Average Score: 8.52
-Episode 1300	Average Score: 8.92
-Episode 1400	Average Score: 10.42
-Episode 1500	Average Score: 10.52
-Episode 1600	Average Score: 10.62
-Episode 1700	Average Score: 11.35
-Episode 1800	Average Score: 11.57
-Episode 1900	Average Score: 11.44
-Episode 2000	Average Score: 11.97
-Episode 2100	Average Score: 12.41
-Episode 2200	Average Score: 12.42
-Episode 2300	Average Score: 12.40
-Episode 2374	Average Score: 13.06
-Environment solved in 2274 episodes!	Average Score: 13.06
+-----Training for 10000 episodes using decay rate of 0.995-----
+
+Episode 100	Average Score: 0.01
+Episode 200	Average Score: 0.891
+Episode 300	Average Score: 4.10
+Episode 400	Average Score: 8.24
+Episode 500	Average Score: 11.05
+Episode 600	Average Score: 12.40
+Episode 700	Average Score: 12.72
+Episode 800	Average Score: 12.26
+Episode 900	Average Score: 12.44
+Episode 932	Average Score: 13.04
+Environment solved in 832 episodes!
+	Average Score: 13.04
 ```
 
-### Untrained agent
-
-![untrained](images/untrained.gif)
 
 ### Trained agent
 
-![trained](images/trained.gif)
+![trained](images/trained1495.gif)
 
 ## Ideas for future work
 
