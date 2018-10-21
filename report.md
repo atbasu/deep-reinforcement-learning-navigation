@@ -28,9 +28,12 @@ Unity brain name: BananaBrain
         Vector Action descriptions: , , , 
 ```
 
-## Learning algorithm
 
-The learning algorithm used is vanilla Deep Q Learning as described in original paper. As an input the vector of state is used instead of an image so convolutional neural nework is replaced with deep neural network. The deep neural network has following layers:
+## Agent Training
+
+### DQN architecture
+
+To train the agent initially I used a vanilla Deep Q Learning as described in original paper. As an input the vector of state is used instead of an image so convolutional neural nework is replaced with deep neural network. The deep neural network has following layers:
 
 - Fully connected layer - input: 37 (state size) output: 128
 - Fully connected layer - input: 128 output 64
@@ -43,9 +46,7 @@ Parameters used in DQN algorithm:
 - Ending epsilion: 0.01
 - Epsilion decay rate: 0.995
 
-## Agent Training
-
-![results](images/average_scores_plot_10000_0.995.png)
+### Training Results
 
 ```
 -----Training for 10000 episodes using decay rate of 0.995-----
@@ -65,9 +66,20 @@ Environment solved in 832 episodes!
 ```
 
 
+| ![results](images/average_scores_plot_10000_0.995.png) |
+|:--:| 
+| Plot of average scores across entire training period |
+
 ### Trained agent
 
 ![trained](images/trained1495.gif)
+
+
+## Experimenting with Hyperparameters
+
+### Experimenting with DQN Architecture
+
+### Experimenting with the Epsilon-decay rate
 
 ## Ideas for future work
 
