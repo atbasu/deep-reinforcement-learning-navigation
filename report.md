@@ -2,12 +2,14 @@
 
 ## Introduction
 
+![trained](images/banana-intro.gif) 
+
 The goal of this project is to train an agent to navigate a large square virtual world littered with yellow and blue bananas, and collect only yellow bananas. A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana. The goal of the agent is to collect as many yellow bananas as possible while avoiding blue bananas. A succesfully trained agent should score an average of +13 over 100 consecutive episodes. 
 
 
 ## Environment
 
-
+This project uses the following rich simulation environment from [Unity ML-Agents](https://github.com/Unity-Technologies/ml-agents).
 
 ```
 INFO:unityagents:
@@ -28,12 +30,18 @@ Unity brain name: BananaBrain
         Vector Action descriptions: , , , 
 ```
 
+The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around agent's forward direction.  Given this information, the agent has to learn how to best select actions.  Four discrete actions are available, corresponding to:
+- **`0`** - move forward.
+- **`1`** - move backward.
+- **`2`** - turn left.
+- **`3`** - turn right.
+
 
 ## Agent Training
 
 ### DQN architecture
 
-To train the agent initially I used a vanilla Deep Q Learning as described in original paper. As an input the vector of state is used instead of an image so convolutional neural nework is replaced with deep neural network. The deep neural network has following layers:
+To train the agent initially I used a vanilla Deep Q Learning as described in original paper. Since a vector of the current environment state is used as input, I have replced the CNNs with a standard DNN instead. The deep neural network has been structured to allow for varying layers but for the intial round of testing I used the following architecture:
 
 - Fully connected layer - input: 37 (state size) output: 128
 - Fully connected layer - input: 128 output 64
@@ -79,15 +87,19 @@ Environment solved in 832 episodes!
 
 ## Experimenting with Hyperparameters
 
+Once the agent was succesfully trained, i decided to experiment with some of the parameters to see how the results varied. 
+
 ### Experimenting with DQN Architecture
 
 ### Experimenting with the Epsilon-decay rate
 
+| ![trained](images/average_scores_plot_1000_0.999.png) | ![trained](images/average_scores_plot_1000_0.998.png) |
+|:--:| 
+| Epsilon-decay rate = 0.999 | Epsilon-decay rate = 0.998 |
+
+
 ## Ideas for future work
 
-1. Extensive hyperparameter optimization
-2. Double Deep Q Networks
-3. Prioritized Experience Replay
-4. Dueling Deep Q Networks
-5. RAINBOW Paper
-6. Learning from pixels
+1. Dueling Deep Q Networks
+2. RAINBOW Paper
+3. Learning from pixels
