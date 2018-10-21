@@ -41,7 +41,9 @@ The state space has 37 dimensions and contains the agent's velocity, along with 
 
 ### DQN architecture
 
-To train the agent initially I used a vanilla Deep Q Learning as described in original paper. Since a vector of the current environment state is used as input, I have replced the CNNs with a standard DNN instead. The deep neural network has been structured to allow for varying layers but for the intial round of testing I used the following architecture:
+To train the agent initially I used a vanilla Deep Q Learning as described in original paper. 
+
+For the network model, since a vector of the current environment state is used as input, I have replced the Convolutional Neural Networks with a standard Deep Neural Network instead. The DNN model has been structured to allow for a varying number hidden layers of different sizes, but for the intial round of testing I used the following architecture:
 
 - Fully connected layer - input: 37 (state size) output: 128
 - Fully connected layer - input: 128 output 64
@@ -53,6 +55,12 @@ Parameters used in DQN algorithm:
 - Starting epsilion: 1.0
 - Ending epsilion: 0.01
 - Epsilion decay rate: 0.995
+
+Because fully connected layers are prone to overfitting, I also implemented dropout for all layers subsequent to the input layer.
+
+In order to make it a Deep Q-Network I added the following things to the agent:
+1. Experience Replay - by storing an agent’s experiences, and then randomly drawing batches of them to train the network, we can more robustly learn to perform well in the task.
+2. Separate Target Network - using a second network to generate the target Q-values mitigates the risk of destabilizing the network by preventing feedback loops between the target and estimated Q-values. 
 
 ### Training Results
 
@@ -114,6 +122,8 @@ Once the agent was succesfully trained, i decided to experiment with some of the
 
 ## Ideas for future work
 
-1. Dueling Deep Q Networks
-2. RAINBOW Paper
-3. Learning from pixels
+1. Double Q Networks
+2. Prioritised Experience Replay
+3. Dueling Deep Q Networks
+4. RAINBOW Paper
+5. Learning from pixels
