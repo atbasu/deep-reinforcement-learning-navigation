@@ -93,12 +93,16 @@ Once the agent was succesfully trained, i decided to experiment with some of the
 
 ### Experimenting with the Epsilon-decay rate
 
-| ![trained](images/average_scores_plot_1000_0.999.png) | ![trained](images/average_scores_plot_1000_0.998.png) |   |   |   |
-|---|---|---|---|---|
-| Epsilon-decay rate = 0.999  | Epsilon-decay rate = 0.998   |   |   |   |
-|   |   |   |   |   |
-|---|---|---|---|---|
-|   |   |   |   |   |
+| ![trained](images/average_scores_plot_1000_0.999.png) | ![trained](images/average_scores_plot_1000_0.998.png) |
+| Epsilon-decay rate = 0.999  | Epsilon-decay rate = 0.998   |
+| ![trained](images/average_scores_plot_1000_0.997.png) | ![trained](images/average_scores_plot_1000_0.996.png) |
+| Epsilon-decay rate = 0.997  | Epsilon-decay rate = 0.996   |
+| ![trained](images/average_scores_plot_1000_0.995.png) | ![trained](images/average_scores_plot_1000_0.994.png) |
+| Epsilon-decay rate = 0.995  | Epsilon-decay rate = 0.994   |
+| ![trained](images/average_scores_plot_1000_0.993.png) | ![trained](images/average_scores_plot_1000_0.993.png) |
+| Epsilon-decay rate = 0.993  | Epsilon-decay rate = 0.992   |
+| ![trained](images/average_scores_plot_1000_0.991.png) |  |
+| Epsilon-decay rate = 0.991  | Epsilon-decay rate = 0.990   |
 
 
 
