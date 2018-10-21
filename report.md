@@ -91,6 +91,14 @@ Once the agent was succesfully trained, i decided to experiment with some of the
 
 ### Experimenting with DQN Architecture
 
+| ![trained](images/average_scores_plot_1000_64.png) |
+|:--:|
+| Hidden Layers : [64]  |
+| ![trained](images/average_scores_plot_1000_256_128_64.png) |
+| Hidden Layers : [256,128,64] |
+| ![trained](images/average_scores_plot_1000_16_8.png) |
+| Hidden Layers : [16,8]  |
+
 ### Experimenting with the Epsilon-decay rate
 
 | ![trained](images/average_scores_plot_1000_0.999.png) | ![trained](images/average_scores_plot_1000_0.998.png) |
@@ -102,9 +110,6 @@ Once the agent was succesfully trained, i decided to experiment with some of the
 | Epsilon-decay rate = 0.995  | Epsilon-decay rate = 0.994   |
 | ![trained](images/average_scores_plot_1000_0.993.png) | ![trained](images/average_scores_plot_1000_0.993.png) |
 | Epsilon-decay rate = 0.993  | Epsilon-decay rate = 0.992   |
-| ![trained](images/average_scores_plot_1000_0.991.png) |  |
-| Epsilon-decay rate = 0.991  | Epsilon-decay rate = 0.990   |
-
 
 
 ## Ideas for future work
