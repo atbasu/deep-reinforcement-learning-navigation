@@ -20,7 +20,7 @@ class Agent():
         seed (int): random seed
     """
 
-    def __init__(self, state_size, action_size, seed, filename=None):
+    def __init__(self, state_size, action_size, seed, hidden_layers=[128,64], filename=None):
         """Initialize an Agent object.
         
         Args:
